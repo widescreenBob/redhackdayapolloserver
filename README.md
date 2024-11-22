@@ -5,3 +5,7 @@ This is a Red Hack Day project that showcases a GraphQL API of Learning Path Con
 ## Red Hack Day Apollo Server
 
 View instructions for getting started with the [Apollo Server](https://github.com/widescreenBob/redhackdayapolloserver/tree/main/server).
+
+## Red Hack Day Front End
+
+View instructions for getting started with the [Front End demo](https://github.com/widescreenBob/redhackdayapolloserver/tree/main/front-end).
