@@ -5,6 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Voyage-r Frontend Demo</title>
+    <link rel="preconnect" href="https://ga.jspm.io">
+    <link rel="preconnect" href="https://www.redhat.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://ga.jspm.io/npm:@rhds/tokens@2.1.0/css/global.css">
+    <link rel="stylesheet" href="https://ga.jspm.io/npm:@rhds/elements@2.1.0/elements/rh-footer/rh-footer-lightdom.css">
+    <link rel="stylesheet" href="https://ga.jspm.io/npm:@rhds/elements@2.1.0/elements/rh-breadcrumb/rh-breadcrumb-lightdom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;500;700&family=Noto+Sans+JP:wght@300;500;700&family=Noto+Sans+KR:wght@300;500;700&family=Noto+Sans+Malayalam:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&family=Noto+Sans+TC:wght@300;500;700&family=Noto+Sans+Tamil:wght@300;500;700&family=Noto+Sans+Thai:wght@300;500;700&display=swap">
     <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/backgrounds.min.css?t=1715179649397" />
     <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/borders.min.css?t=1715179649397" />
     <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/components.min.css?t=1715179649397" />
@@ -18,6 +25,13 @@
     <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/svg.min.css?t=1715179649397" />
     <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/typography.min.css?t=1715179649397" />
     <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <script defer src="javascripts/rh-navigation.js"></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        new RhNavigation('#rh-navigation');
+      });
+    </script>
     <!-- Import map. No need to modify for basic RHDS usage -->
     <script type="importmap">
     {
@@ -58,24 +72,451 @@
     }
     </script>
   </head>
-  <body>
-    <h1>Hello world</h1>
-    <div id="app"></div>
+  <body class="dx-bg-gray">
+    <rh-surface>
+      <rh-skip-link href="#main-content">Skip to main content</rh-skip-link>
 
-    <p>👉 Emulate the look and feel of <a href="https://access.redhat.com/start/learn:get-set-red-hat">access.redhat.com's</a> learning paths content.</p>
+      <nav class="universal-nav" aria-label="Universal Navigation">
+        <ul>
+          <li><a href="https://access.redhat.com/">Support</a></li>
+          <li><a href="https://docs.redhat.com/en">Documentation</a></li>
+          <li><a href="https://cloud.redhat.com/">Console</a></li>
+          <li><a href="https://developers.redhat.com/">Developers</a></li>
+          <li><a href="https://www.redhat.com/en/products/trials">Start a trial</a></li>
+          <li>
+            <details class="universal-nav-dropdown">
+              <summary>
+                All Red Hat
+              </summary>
+              <div id="details-content">
+                <ul>
+                  <li>For customers
+                    <ul>
+                      <li><a href="https://access.redhat.com/">Customer support</a></li>
+                      <li><a href="https://access.redhat.com/management">Subscription management</a></li>
+                      <li><a href="https://access.redhat.com/support/cases">Support cases</a></li>
+                      <li><a href="https://catalog.redhat.com/">Red Hat Ecosystem Catalog</a></li>
+                      <li><a href="https://catalog.redhat.com/partners">Find a partner</a></li>
+                    </ul>
+                  </li>
+                  <li>For partners
+                    <ul>
+                      <li><a href="https://connect.redhat.com/partner-admin/dashboard">Partner portal</a></li>
+                      <li><a href="https://connect.redhat.com/en/support">Partner support</a></li>
+                      <li><a href="https://connect.redhat.com/">Become a partner </a></li>
+                    </ul>
+                  </li>
+                  <li>Try, buy, &amp; sell
+                    <ul>
+                      <li><a href="https://marketplace.redhat.com/en-us">Red Hat Marketplace</a></li>
+                      <li><a href="https://www.redhat.com/en/store">Red Hat Store</a></li>
+                      <li><a href="https://www.redhat.com/en/contact">Contact sales</a></li>
+                      <li><a href="https://www.redhat.com/en/products/trials">Start a trial</a></li>
+                    </ul>
+                  </li>
+                  <li>Learning resources
+                    <ul>
+                      <li><a href="https://docs.redhat.com/en">Documentation</a></li>
+                      <li><a href="https://www.redhat.com/en/services/training-and-certification">Training and certification </a></li>
+                      <li><a href="https://cloud.redhat.com/learn">Hybrid cloud learning hub</a></li>
+                      <li><a href="https://www.redhat.com/en/interactive-labs">Interactive labs</a></li>
+                      <li><a href="https://learn.redhat.com/">Learning community</a></li>
+                      <li><a href="https://tv.redhat.com">Red Hat TV</a></li>
+                    </ul>
+                  </li>
+                  <li>Open source communities
+                    <ul>
+                      <li><a href="https://www.ansible.com/community">Ansible</a></li>
+                      <li><a href="https://access.redhat.com/accelerators">Global advocacy</a></li>
+                      <li><a href="https://www.redhat.com/en/about/our-community-contributions">How we contribute</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </nav>
 
-    <rh-card color-palette="lighter">
-      <h2 slot="header">Red Hat Design System</h2>
-      <p>Branded, accessible web components for digital experiences and apps</p>
-      <rh-cta slot="footer">
-        <a href="https://ux.redhat.com">Learn more</a>
-      </rh-cta>
-    </rh-card>
+      <div id="rh-navigation" class="rh-navigation">
+        <nav aria-label="Primary Navigation">
+          <div class="rh-navigation-container">
+            <a class="rh-navigation-logo" href="https://www.redhat.com/">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 613 145">
+                <title>Red Hat</title>
+                <path d="M127.47 83.49c12.51 0 30.61-2.58 30.61-17.46a14 14 0 0 0-.31-3.42l-7.45-32.36c-1.72-7.12-3.23-10.35-15.73-16.6C124.89 8.69 103.76.5 97.51.5 91.69.5 90 8 83.06 8c-6.68 0-11.64-5.6-17.89-5.6-6 0-9.91 4.09-12.93 12.5 0 0-8.41 23.72-9.49 27.16a6.43 6.43 0 0 0-.22 1.94c0 9.22 36.3 39.45 84.94 39.45M160 72.07c1.73 8.19 1.73 9.05 1.73 10.13 0 14-15.74 21.77-36.43 21.77-46.76.03-87.72-27.37-87.72-45.48a18.45 18.45 0 0 1 1.51-7.33C22.27 52 .5 55 .5 74.22c0 31.48 74.59 70.28 133.65 70.28 45.28 0 56.7-20.48 56.7-36.65 0-12.72-11-27.16-30.83-35.78" fill="#e00"></path>
+                <path d="M160 72.07c1.73 8.19 1.73 9.05 1.73 10.13 0 14-15.74 21.77-36.43 21.77-46.76.03-87.72-27.37-87.72-45.48a18.45 18.45 0 0 1 1.51-7.33l3.66-9.06a6.43 6.43 0 0 0-.22 1.9c0 9.22 36.3 39.45 84.94 39.45 12.51 0 30.61-2.58 30.61-17.46a14 14 0 0 0-.31-3.42Z"></path>
+                <path d="M579.74 92.8c0 11.89 7.15 17.67 20.19 17.67a52.11 52.11 0 0 0 11.89-1.68V95a24.84 24.84 0 0 1-7.68 1.16c-5.37 0-7.36-1.68-7.36-6.73V68.3h15.56V54.1h-15.56v-18l-17 3.68V54.1h-11.29v14.2h11.25Zm-53 .32c0-3.68 3.69-5.47 9.26-5.47a43.12 43.12 0 0 1 10.1 1.26v7.15a21.51 21.51 0 0 1-10.63 2.63c-5.46 0-8.73-2.1-8.73-5.57m5.2 17.56c6 0 10.84-1.26 15.36-4.31v3.37h16.82V74.08c0-13.56-9.14-21-24.39-21-8.52 0-16.94 2-26 6.1l6.1 12.52c6.52-2.74 12-4.42 16.83-4.42 7 0 10.62 2.73 10.62 8.31v2.73a49.53 49.53 0 0 0-12.62-1.58c-14.31 0-22.93 6-22.93 16.73 0 9.78 7.78 17.24 20.19 17.24m-92.44-.94h18.09V80.92h30.29v28.82H506V36.12h-18.07v28.29h-30.29V36.12h-18.09Zm-68.86-27.9c0-8 6.31-14.1 14.62-14.1A17.22 17.22 0 0 1 397 72.09v19.45A16.36 16.36 0 0 1 385.24 96c-8.2 0-14.62-6.1-14.62-14.09m26.61 27.87h16.83V32.44l-17 3.68v20.93a28.3 28.3 0 0 0-14.2-3.68c-16.19 0-28.92 12.51-28.92 28.5a28.25 28.25 0 0 0 28.4 28.6 25.12 25.12 0 0 0 14.93-4.83ZM320 67c5.36 0 9.88 3.47 11.67 8.83h-23.2C310.15 70.3 314.36 67 320 67m-28.67 15c0 16.2 13.25 28.82 30.28 28.82 9.36 0 16.2-2.53 23.25-8.42l-11.26-10c-2.63 2.74-6.52 4.21-11.14 4.21a14.39 14.39 0 0 1-13.68-8.83h39.65v-4.23c0-17.67-11.88-30.39-28.08-30.39a28.57 28.57 0 0 0-29 28.81M262 51.58c6 0 9.36 3.78 9.36 8.31S268 68.2 262 68.2h-17.89V51.58Zm-36 58.16h18.09V82.92h13.77l13.89 26.82H292l-16.2-29.45a22.27 22.27 0 0 0 13.88-20.72c0-13.25-10.41-23.45-26-23.45H226Z" fill="#fff"></path>
+              </svg>
+            </a>
+            <div class="rh-navigation-mobile-menu-button">
+              <button aria-controls="rh-navigation-menu">Menu</button>
+            </div>
+            <div id="rh-navigation-menu" class="rh-navigation-menu">
+              <div class="rh-navigation-menu-primary">
+                <ul>
+                  <li>
+                    <div class="rh-navigation-dropdown">
+                      <a href="#products">Products</a>
+                      <div class="rh-navigation-dropdown-menu">
+                        <div class="rh-navigation-dropdown-menu-container">
+                          <div class="rhsfx-grid sm-two-columns">
+                            <div class="rhsfx-grid-item">
+                              <h3>Platform products</h3>
+                              <ul>
+                                <li>
+                                  <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux" class="rhsfx-tile-link">
+                                    <span>Red Hat Enterprise Linux</span>
+                                    <span>A flexible, stable operating system to support hybrid cloud innovation.</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift" class="rhsfx-tile-link">
+                                    <span>Red Hat OpenShift</span>
+                                    <span>A container platform to build, modernize, and deploy applications at scale.</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://www.redhat.com/en/technologies/management/ansible" class="rhsfx-tile-link">
+                                    <span>Red Hat Ansible Automation Platform</span>
+                                    <span>A foundation for implementing enterprise-wide automation.</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- grid-item -->
+                            <div class="rhsfx-grid-item">
+                              <h3>Try & buy</h3>
+                              <ul>
+                                <li>
+                                  <a href="https://www.redhat.com/en/products/trials" class="rhsfx-tile-link">
+                                    <span>Start a trial</span>
+                                    <span>Assess a product with a no-cost tria</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://www.redhat.com/en/store" class="rhsfx-tile-link">
+                                    <span>Buy online</span>
+                                    <span>Buy select products and services in the Red Hat Store.</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://www.redhat.com/en/partners/certified-cloud-and-service-providers" class="rhsfx-tile-link">
+                                    <span>Integrate with major cloud providers</span>
+                                    <span>Buy Red Hat solutions using committed spend from providers, including: <img src="https://www.redhat.com/rhdc/managed-files/cloud-providers-2x.png" alt="Cloud providers: Amazon Web Services, Microsoft Azure, and Google Cloud" class="rhsfx-tile-link-img"></span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- grid-item -->
+                            <div class="rhsfx-grid-item">
+                              <div class="rhsfx-card">
+                                <h3>Featured</h3>
+                                <ul>
+                                  <li>
+                                    <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/ai">Red Hat Enterprise Linux AI</a>
+                                    <div class="rhsfx-tag filled blue">
+                                      <span>New</span></div>
+                                  </li>
+                                  <li>
+                                    <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-ai">Red Hat OpenShift AI</a>
+                                  </li>
+                                  <li>
+                                    <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/virtualization">Red Hat OpenShift Virtualization</a>
+                                  </li>
+                                  <li>
+                                    <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/aws">Red Hat OpenShift Service on AWS</a>
+                                  <li>
+                                    <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/azure">Microsoft Azure Red Hat OpenShift</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <!-- rhsfx-nav-card -->
+                            </div>
+                            <!-- grid-item -->
+                          </div>
+                          <!-- grid -->
+                          <div class="rhsfx-nav-footer">
+                            <span class="rhsfx-cta primary">
+                              <a href="https://www.redhat.com/en/technologies/all-products">See all products</a>
+                            </span>
+                          </div>
+                          <!-- rhsfx-nav-footer -->
+                        </div>
+                        <!-- rh-navigation-dropdown-menu-container -->
+                      </div>
+                      <!-- rh-navigation-dropdown-menu -->
+                    </div>
+                  </li>
+                  <li>
+                    <div class="rh-navigation-dropdown">
+                      <a href="#services">Services</a>
+                      <div class="rh-navigation-dropdown-menu">
+                        <div class="rh-navigation-dropdown-menu-container">
+                          <div class="rhsfx-grid sm-two-columns">
+                            <div class="rhsfx-grid-item">
+                            Services Items...
+                          </div>
+                            <div class="rhsfx-grid-item">
+                            Items...
+                          </div>
+                            <div class="rhsfx-grid-item">
+                            Items...
+                          </div>
+                          </div>
+                        </div>
+                        <!-- rh-navigation-dropdown-menu-container -->
+                      </div>
+                      <!-- rh-navigation-dropdown-menu -->
+                    </div>
+                  </li>
+                  <li>
+                    <div class="rh-navigation-dropdown">
+                      <a href="#training">Training & Services</a>
+                      <div class="rh-navigation-dropdown-menu">
+                        <div class="rh-navigation-dropdown-menu-container">
+                          <div class="rhsfx-grid sm-two-columns md-four-columns">
+                            <div class="rhsfx-grid-item">
+                            Training & Services Items...
+                          </div>
+                            <div class="rhsfx-grid-item">
+                            Items...
+                          </div>
+                            <div class="rhsfx-grid-item">
+                            Items...
+                          </div>
+                          </div>
+                        </div>
+                        <!-- rh-navigation-dropdown-menu-container -->
+                      </div>
+                      <!-- rh-navigation-dropdown-menu -->
+                    </div>
+                  </li>
+                  <li>
+                    <div class="rh-navigation-dropdown">
+                      <a href="#resources">Resources</a>
+                      <div class="rh-navigation-dropdown-menu">
+                        <div class="rh-navigation-dropdown-menu-container">
+                          <div class="rhsfx-grid sm-two-columns md-four-columns">
+                            <div class="rhsfx-grid-item">
+                            Resources Items...
+                          </div>
+                            <div class="rhsfx-grid-item">
+                            Items...
+                          </div>
+                            <div class="rhsfx-grid-item">
+                            Items...
+                          </div>
+                          </div>
+                        </div>
+                        <!-- rh-navigation-dropdown-menu-container -->
+                      </div>
+                      <!-- rh-navigation-dropdown-menu -->
+                    </div>
+                  </li>
+                  <li>
+                    <div class="rh-navigation-dropdown">
+                      <a href="#partners">Partners</a>
+                      <div class="rh-navigation-dropdown-menu">
+                        <div class="rh-navigation-dropdown-menu-container">
+                          <div class="rhsfx-grid sm-two-columns md-four-columns">
+                            <div class="rhsfx-grid-item">
+                            Partners Items...
+                          </div>
+                            <div class="rhsfx-grid-item">
+                            Items...
+                          </div>
+                            <div class="rhsfx-grid-item">
+                            Items...
+                          </div>
+                          </div>
+                        </div>
+                        <!-- rh-navigation-dropdown-menu-container -->
+                      </div>
+                      <!-- rh-navigation-dropdown-menu -->
+                    </div>
+                  </li>
+                  <li>
+                    <div class="rh-navigation-dropdown">
+                      <a href="#about">About</a>
+                      <div class="rh-navigation-dropdown-menu">
+                        <div class="rh-navigation-dropdown-menu-container">
+                          <div class="rhsfx-grid sm-two-columns md-four-columns">
+                            <div class="rhsfx-grid-item">
+                            AboutItems...
+                          </div>
+                            <div class="rhsfx-grid-item">
+                            Items...
+                          </div>
+                            <div class="rhsfx-grid-item">
+                            Items...
+                          </div>
+                          </div>
+                        </div>
+                        <!-- rh-navigation-dropdown-menu-container -->
+                      </div>
+                      <!-- rh-navigation-dropdown-menu -->
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#test">External Link</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- rh-navigation-menu-primary -->
+              <div class="rh-navigation-menu-secondary">
+                <ul>
+                  <li>
+                    <div class="rh-navigation-dropdown">
+                      <a href="#my-account">
+                        <span>My Account</span>
+                      </a>
+                      <div class="rh-navigation-dropdown-menu">
+                        <div class="rh-navigation-dropdown-menu-container">
+                          <ul>
+                            <li>
+                              <a href="#my-profile">My Profile</a>
+                            </li>
+                            <li>
+                              <a href="#change-password">Change Password</a>
+                            </li>
+                            <li>
+                              <a href="#email-preferences">Email Preferences</a>
+                            </li>
+                            <li>
+                              <a href="#sign-out">Sign out</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- rh-navigation-menu-secondary -->
+            </div>
+            <!-- rh-navigation-menu -->
+          </div>
+          <!-- rh-navigation-container -->
+        </nav>
+      </div>
+      <!-- rh-navigation -->
+
+      <div class="dx-bg-white">
+        <div class="dx-container dx-band dx-pt-3">
+
+          <rh-breadcrumb variant="subtle">
+            <ol>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Learning Path Content</a></li>
+              <li><a href="#" aria-current="page">Chapter 1. Understanding ROSA</a></li>
+            </ol>
+          </rh-breadcrumb>
+
+          <main id="main-content">
+            <h1>Hello Red Hack Day</h1>
+            <p class="dx-font-display dx-text-24">This is a demo of a page consuming a GraphQL endpoint consisting of Red Hat learning path content. This page is built with plain HTML, CSS, and JavaScript. It is not in Drupal. It showcases how anyone within our organization could implement this GraphQL API and use it in their project.</p>
+            <p class="dx-text-14 dx-text-gray-50 dx-mb-4">Learning Path - 5 Resources - 36 mins - Published on May 30, 2024</p>
+            <p>
+              The following content is read from Github's GraphQL API:
+            </p>
+            <div id="app"></div>
+          </main>
+
+          <p class="dx-text-16 dx-text-gray-50">👉 Emulate the look and feel of <a href="https://access.redhat.com/start/learn:get-set-red-hat">access.redhat.com's</a> learning paths content.</p>
+
+        </div> <!-- /.dx-container -->
+      </div> <!-- /.dx-bg-white -->
+
+      <rh-footer data-analytics-region="page-footer">
+        <a slot="logo" href="https://redhat.com/en" data-analytics-category="Footer" data-analytics-text="Logo">
+          <img alt="Red Hat logo" src="https://static.redhat.com/libs/redhat/brand-assets/2/corp/logo--on-dark.svg" loading="lazy" />
+        </a>
+        <rh-footer-social-link slot="social-links" icon="linkedin"><a href="https://www.linkedin.com/company/red-hat" data-analytics-region="social-links-exit" data-analytics-category="Footer|social-links" data-analytics-text="LinkedIn">LinkedIn</a></rh-footer-social-link>
+        <rh-footer-social-link slot="social-links" icon="youtube"><a href="https://www.youtube.com/user/RedHatVideos" data-analytics-region="social-links-exit" data-analytics-category="Footer|social-links" data-analytics-text="YouTube">YouTube</a></rh-footer-social-link>
+        <rh-footer-social-link slot="social-links" icon="facebook"><a href="https://www.facebook.com/redhatinc" data-analytics-region="social-links-exit" data-analytics-category="Footer|social-links" data-analytics-text="Facebook">Facebook</a></rh-footer-social-link>
+        <rh-footer-social-link slot="social-links" icon="x"><a href="https://twitter.com/RedHat" data-analytics-region="social-links-exit" data-analytics-category="Footer|social-links" data-analytics-text="Twitter">X/Twitter</a></rh-footer-social-link>
+        <h3 slot="links" data-analytics-text="Products">Products</h3>
+        <ul slot="links">
+          <li><a href="https://redhat.com/en/technologies/linux-platforms/enterprise-linux" data-analytics-category="Footer|Products" data-analytics-text="Red Hat Enterprise Linux">Red Hat Enterprise Linux</a></li>
+          <li><a href="https://redhat.com/en/technologies/cloud-computing/openshift" data-analytics-category="Footer|Products" data-analytics-text="Red Hat OpenShift">Red Hat OpenShift</a></li>
+          <li><a href="https://redhat.com/en/technologies/management/ansible" data-analytics-category="Footer|Products" data-analytics-text="Red Hat Ansible Automation Platform">Red Hat Ansible Automation Platform</a></li>
+          <li><a href="https://redhat.com/en/technologies/cloud-computing/openshift/cloud-services" data-analytics-category="Footer|Products" data-analytics-text="Cloud services">Cloud services</a></li>
+          <li><a href="https://redhat.com/en/technologies/all-products" data-analytics-category="Footer|Products" data-analytics-text="See all products">See all products</a></li>
+        </ul>
+        <h3 slot="links" data-analytics-text="Tools">Tools</h3>
+        <ul slot="links">
+          <li><a href="https://sso.redhat.com" data-analytics-category="Footer|Tools" data-analytics-text="My account">My account</a></li>
+          <li><a href="https://redhat.com/en/services/training-and-certification" data-analytics-category="Footer|Tools" data-analytics-text="Training and certification">Training and certification</a></li>
+          <li><a href="https://access.redhat.com" data-analytics-category="Footer|Tools" data-analytics-text="Customer support">Customer support</a></li>
+          <li><a href="https://developers.redhat.com/" data-analytics-category="Footer|Tools" data-analytics-text="Developer resources">Developer resources</a></li>
+          <li><a href="https://learn.redhat.com/" data-analytics-category="Footer|Tools" data-analytics-text="Learning community">Learning community</a></li>
+          <li><a href="https://connect.redhat.com/" data-analytics-category="Footer|Tools" data-analytics-text="Partner resources">Partner resources</a></li>
+          <li><a href="https://redhat.com/en/resources" data-analytics-category="Footer|Tools" data-analytics-text="Resource library">Resource library</a></li>
+        </ul>
+        <h3 slot="links" data-analytics-text="Try buy sell">Try, buy & sell</h3>
+        <ul slot="links">
+          <li><a href="https://redhat.com/en/products/trials" data-analytics-category="Footer|Try buy sell" data-analytics-text="Product trial center">Product trial center</a></li>
+          <li><a href="https://marketplace.redhat.com" data-analytics-category="Footer|Try buy sell" data-analytics-text="Red Hat Marketplace">Red Hat Marketplace</a></li>
+          <li><a href="https://catalog.redhat.com/" data-analytics-category="Footer|Tools" data-analytics-text="Red Hat Ecosystem Catalog">Red Hat Ecosystem Catalog</a></li>
+          <li><a href="http://redhat.force.com/finder/" data-analytics-category="Footer|Try buy sell" data-analytics-text="Find a partner">Find a partner</a></li>
+          <li><a href="https://www.redhat.com/en/store" data-analytics-category="Footer|Try buy sell" data-analytics-text="Red Hat Store">Red Hat Store</a></li>
+          <li><a href="https://cloud.redhat.com/" data-analytics-category="Footer|Tools" data-analytics-text="Console">Console</a></li>
+        </ul>
+        <h3 slot="links" data-analytics-text="Communicate">Communicate</h3>
+        <ul slot="links">
+          <li><a href="https://redhat.com/en/services/consulting-overview#contact-us" data-analytics-category="Footer|Communicate" data-analytics-text="Contact consulting">Contact consulting</a></li>
+          <li><a href="https://redhat.com/en/contact" data-analytics-category="Footer|Communicate" data-analytics-text="Contact sales">Contact sales</a></li>
+          <li><a href="https://redhat.com/en/services/training-and-certification/contact-us" data-analytics-category="Footer|Communicate" data-analytics-text="Contact training">Contact training</a></li>
+          <li><a href="https://redhat.com/en/about/social" data-analytics-category="Footer|Communicate" data-analytics-text="Social">Social</a></li>
+        </ul>
+        <rh-footer-block slot="main-secondary">
+          <h3 slot="header" data-analytics-text="About Red Hat">About Red Hat</h3>
+          <p> We’re the world’s leading provider of enterprise open source solutions—including Linux, cloud, container, and Kubernetes. We deliver hardened solutions that make it easier for enterprises to work across platforms and environments, from the core datacenter to the network edge.</p>
+        </rh-footer-block>
+        <rh-footer-block slot="main-secondary">
+          <h3 slot="header" data-analytics-text="Subscribe to our newsletter Red Hat Shares">Subscribe to our newsletter, Red Hat Shares</h3>
+          <rh-cta><a href="https://www.redhat.com/en/email-preferences?newsletter=RH-Shares&intcmp=7016000000154xCAAQ" data-analytics-category="Footer|About Red Hat" data-analytics-text="Sign up now">Sign up now</a></rh-cta>
+        </rh-footer-block>
+
+        <!-- Universal Footer -->
+        <rh-footer-universal slot="universal">
+          <h3 slot="links-primary" data-analytics-text="Red Hat legal and privacy links" hidden>Red Hat legal and privacy links</h3>
+          <ul slot="links-primary" data-analytics-region="page-footer-bottom-primary">
+            <li><a href="https://redhat.com/en/about/company" data-analytics-category="Footer|Corporate" data-analytics-text="About Red Hat">About Red Hat</a></li>
+            <li><a href="https://redhat.com/en/jobs" data-analytics-category="Footer|Corporate" data-analytics-text="Jobs">Jobs</a></li>
+            <li><a href="https://redhat.com/en/events" data-analytics-category="Footer|Corporate" data-analytics-text="Events">Events</a></li>
+            <li><a href="https://redhat.com/en/about/office-locations" data-analytics-category="Footer|Corporate" data-analytics-text="Locations">Locations</a></li>
+            <li><a href="https://redhat.com/en/contact" data-analytics-category="Footer|Corporate" data-analytics-text="Contact Red Hat">Contact Red Hat</a></li>
+            <li><a href="https://redhat.com/en/blog" data-analytics-category="Footer|Corporate" data-analytics-text="Red Hat Blog">Red Hat Blog</a></li>
+            <li><a href="https://redhat.com/en/about/our-culture/diversity-equity-inclusion" data-analytics-category="Footer|Corporate" data-analytics-text="Diversity equity and inclusion">Diversity, equity, and inclusion</a></li>
+            <li><a href="https://coolstuff.redhat.com/" data-analytics-category="Footer|Corporate" data-analytics-text="Cool Stuff Store">Cool Stuff Store</a></li>
+            <li><a href="https://www.redhat.com/en/summit" data-analytics-category="Footer|Corporate" data-analytics-text="Red Hat Summit">Red Hat Summit</a></li>
+          </ul>
+          <rh-footer-copyright slot="links-secondary">© 2024 Red Hat, Inc.</rh-footer-copyright>
+          <h3 slot="links-secondary" data-analytics-text="Red Hat legal and privacy links" hidden>Red Hat legal and privacy links</h3>
+          <ul slot="links-secondary" data-analytics-region="page-footer-bottom-secondary">
+            <li><a href="https://redhat.com/en/about/privacy-policy" data-analytics-category="Footer|Red Hat legal and privacy links" data-analytics-text="Privacy statement">Privacy statement</a></li>
+            <li><a href="https://redhat.com/en/about/terms-use" data-analytics-category="Footer|Red Hat legal and privacy links" data-analytics-text="Terms of use">Terms of use</a></li>
+            <li><a href="https://redhat.com/en/about/all-policies-guidelines" data-analytics-category="Footer|Red Hat legal and privacy links" data-analytics-text="All policies and guidelines">All policies and guidelines</a></li>
+            <li><a href="https://redhat.com/en/about/digital-accessibility" data-analytics-category="Footer|Red Hat legal and privacy links" data-analytics-text="Digital accessibility" class="active">Digital accessibility</a></li>
+            <!-- If your website supports trustarc include this item to add Cookie Preferences to your site. -->
+            <!-- <li><span id="teconsent"> </span></li> -->
+          </ul>
+        </rh-footer-universal>
+      </rh-footer>
+
+    </rh-surface>
     <script type="module" src="./javascripts/main.js"></script>
     <script type="module">
       /* Add an import statement here for any element in the RHDS library */
+      import '@rhds/elements/rh-surface/rh-surface.js';
+      import '@rhds/elements/rh-skip-link/rh-skip-link.js';
+      import '@rhds/elements/rh-breadcrumb/rh-breadcrumb.js';
       import '@rhds/elements/rh-card/rh-card.js';
       import '@rhds/elements/rh-cta/rh-cta.js';
+      import '@rhds/elements/rh-footer/rh-footer.js';
     </script>
+    <script src="javascripts/universal-navigation.js"></script>
   </body>
 </html>

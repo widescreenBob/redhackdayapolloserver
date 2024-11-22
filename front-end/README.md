@@ -31,3 +31,9 @@ live-server
 ```
 
 This will open a new tab in your browser where you can view the app/page.
+
+## DX Utilities
+
+We're using these utility classes in places throughout this demo.
+
+If you want to see the documentation for these utilities, connect to the Corporate VPN and view the [DX Utilities docs](https://uxdd.pages.corp.redhat.com/dx-utilities/foundations/color/).
