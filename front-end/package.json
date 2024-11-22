@@ -1,0 +1,9 @@
+{
+  "name": "voyage-r-demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

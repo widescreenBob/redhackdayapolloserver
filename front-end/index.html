@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Voyage-r Frontend Demo</title>
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/backgrounds.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/borders.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/components.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/effects.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/flexbox.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/grid.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/interactivity.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/layout.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/sizing.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/spacing.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/svg.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="https://www.redhat.com/modules/contrib/red_hat_shared_libs/dist/dx-utilities/typography.min.css?t=1715179649397" />
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <!-- Import map. No need to modify for basic RHDS usage -->
+    <script type="importmap">
+    {
+      "imports": {
+        "@rhds/elements/": "https://ga.jspm.io/npm:@rhds/elements@2.1.0/elements/",
+        "@rhds/icons/": "https://ga.jspm.io/npm:@rhds/icons@1.1.2/"
+      },
+      "scopes": {
+        "https://ga.jspm.io/": {
+          "@floating-ui/core": "https://ga.jspm.io/npm:@floating-ui/core@1.6.8/dist/floating-ui.core.mjs",
+          "@floating-ui/dom": "https://ga.jspm.io/npm:@floating-ui/dom@1.6.11/dist/floating-ui.dom.mjs",
+          "@floating-ui/utils": "https://ga.jspm.io/npm:@floating-ui/utils@0.2.8/dist/floating-ui.utils.mjs",
+          "@floating-ui/utils/dom": "https://ga.jspm.io/npm:@floating-ui/utils@0.2.8/dist/floating-ui.utils.dom.mjs",
+          "@lit/context": "https://ga.jspm.io/npm:@lit/context@1.1.2/development/index.js",
+          "@lit/reactive-element": "https://ga.jspm.io/npm:@lit/reactive-element@2.0.4/development/reactive-element.js",
+          "@lit/reactive-element/decorators/": "https://ga.jspm.io/npm:@lit/reactive-element@2.0.4/development/decorators/",
+          "@patternfly/pfe-core": "https://ga.jspm.io/npm:@patternfly/pfe-core@4.0.2/core.js",
+          "@patternfly/pfe-core/": "https://ga.jspm.io/npm:@patternfly/pfe-core@4.0.2/",
+          "@patternfly/pfe-core/ssr-shims.js": "https://ga.jspm.io/npm:@patternfly/pfe-core@4.0.2/core.js",
+          "@rhds/elements/lib/": "https://ga.jspm.io/npm:@rhds/elements@2.1.0/lib/",
+          "@rhds/elements/": "https://ga.jspm.io/npm:@rhds/elements@2.1.0/elements/",
+          "@rhds/icons": "https://ga.jspm.io/npm:@rhds/icons@1.1.2/icons.js",
+          "@rhds/icons/ui/": "https://ga.jspm.io/npm:@rhds/icons@1.1.2/ui/",
+          "@rhds/tokens/css/": "https://ga.jspm.io/npm:@rhds/tokens@2.1.0/css/",
+          "@rhds/tokens/media.js": "https://ga.jspm.io/npm:@rhds/tokens@2.1.0/js/media.js",
+          "lit": "https://ga.jspm.io/npm:lit@3.2.0/index.js",
+          "lit-element/lit-element.js": "https://ga.jspm.io/npm:lit-element@4.1.0/development/lit-element.js",
+          "lit-html": "https://ga.jspm.io/npm:lit-html@3.2.0/development/lit-html.js",
+          "lit-html/": "https://ga.jspm.io/npm:lit-html@3.2.0/development/",
+          "lit/": "https://ga.jspm.io/npm:lit@3.2.0/",
+          "prism-esm": "https://ga.jspm.io/npm:prism-esm@1.29.0-fix.6/prism.js",
+          "prism-esm/components/": "https://ga.jspm.io/npm:prism-esm@1.29.0-fix.6/components/",
+          "tslib": "https://ga.jspm.io/npm:tslib@2.7.0/tslib.es6.mjs",
+          "@rhds/icons": "https://ga.jspm.io/npm:@rhds/icons@1.1.2/icons.js",
+          "@rhds/elements/": "https://ga.jspm.io/npm:@rhds/elements@2.1.0/elements/"
+        }
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+    <div id="app"></div>
+
+    <p>👉 Emulate the look and feel of <a href="https://access.redhat.com/start/learn:get-set-red-hat">access.redhat.com's</a> learning paths content.</p>
+
+    <rh-card color-palette="lighter">
+      <h2 slot="header">Red Hat Design System</h2>
+      <p>Branded, accessible web components for digital experiences and apps</p>
+      <rh-cta slot="footer">
+        <a href="https://ux.redhat.com">Learn more</a>
+      </rh-cta>
+    </rh-card>
+    <script type="module" src="./javascripts/main.js"></script>
+    <script type="module">
+      /* Add an import statement here for any element in the RHDS library */
+      import '@rhds/elements/rh-card/rh-card.js';
+      import '@rhds/elements/rh-cta/rh-cta.js';
+    </script>
+  </body>
+</html>

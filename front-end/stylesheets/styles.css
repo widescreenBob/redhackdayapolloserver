@@ -1,0 +1,12 @@
+body {
+  font-family: system-ui;
+}
+
+.github-content {
+  outline: 3px solid #eaeaea;
+  padding: var(--rh-space-2xl, 32px);
+}
+
+li::first-letter {
+  text-transform: uppercase;
+}
