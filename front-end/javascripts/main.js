@@ -1,50 +1,73 @@
-// NOTE: Set up `token-config.js` via the installation instructions in README.md
-import TOKEN from './token-config.js';
-
-const query = `{
-  repository(name: "red-hat-design-system", owner: "RedHat-UX") {
-    owner {
-      login
+const query = `
+  query FrontEnd {
+    card {
+      title
+      description
+      url
+      featureImageUrl
+      featureImageAlt
+      metadata {
+        datePublished
+        numberOfLearningResources
+        timeToComplete
+        type
+      }
     }
-    name
-    description
-    url
   }
-}`;
+`;
 
-const fetcher = async (query) => {
+const fetchGraphQLData = async (url, query) => {
   try {
-    const res = await fetch('https://api.github.com/graphql', {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
-        Authorization: `bearer ${TOKEN}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ query })
+      body: JSON.stringify({ query }),
     });
-    const { data } = await res.json();
-    return data;
+
+    const responseData = await response.json();
+
+    if (!response.ok || Object.hasOwn(responseData, 'errors')) {
+      throw new Error(
+        `GraphQL Error: ${
+          responseData.errors ? JSON.stringify(responseData.errors, null, 2) : 'Unknown error'
+        }`
+      );
+    }
+
+    return responseData.data;
   } catch (error) {
-    console.log(error);
-    throw error;
+    console.error(error);
+    throw new Error('Failed to fetch GraphQL data');
   }
 };
 
-const data = await fetcher(query);
-console.log(data);
-const orgName = data.repository.owner.login;
-// const repoName = data.repository.name;
-const url = data.repository.url;
-const repoDescription = data.repository.description;
+const main = async () => {
+  const apiUrl = 'http://localhost:4000/graphql';
+  try {
+    const data = await fetchGraphQLData(apiUrl, query);
 
-document.querySelector('#app').innerHTML = `
-  <div class="github-content" style="max-width: 800px;"">
-    <rh-card>
-      <h2 slot="header">${orgName}</h2>
-      <p class="dx-m-0">${repoDescription}. This content is pulled via a GraphQL API and this is an RHDS Card component.</p>
-      <rh-cta slot="footer">
-        <a href="${url}">View Repository on Github</a>
-      </rh-cta>
-    </rh-card>
-  </div>
-`;
+    const { description, featureImageAlt, featureImageUrl, metadata, title, url } = data.card;
+    const { type, datePublished, numberOfLearningResources, timeToComplete } = metadata;
+
+    document.querySelector('#metadata').innerText = `${type} - ${numberOfLearningResources} resources - ${timeToComplete} - ${datePublished}`;
+
+    // Just a demo, nevermind `innerHTML` here ;-)
+    document.querySelector('#app').innerHTML = `
+      <div class="graphql-content" style="max-width: 800px;"">
+        <rh-card>
+          <h2 slot="header">${title}</h2>
+          <p class="dx-m-0">${description}</p>
+          <rh-cta slot="footer">
+            <a href="${url}">${featureImageAlt}</a>
+          </rh-cta>
+        </rh-card>
+      </div>
+    `;
+  } catch (error) {
+    document.getElementById('app').textContent = `Error: ${error.message}`;
+  }
+};
+
+main();

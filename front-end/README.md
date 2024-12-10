@@ -1,6 +1,6 @@
 # Front End
 
-This is a basic demo that incorporates a (coming soon) GraphQL API of learning path content with the Red Hat Design System.
+This is a basic demo that incorporates a GraphQL API of learning path content with the Red Hat Design System.
 
 The purpose of this demo is to showcase that learning path content can be used outside of Drupal.
 
@@ -8,21 +8,11 @@ The purpose of this demo is to showcase that learning path content can be used o
 
 This project requires users have [NodeJS v22.11.0](https://nodejs.org/) installed.
 
-1. cd to the `front-end` directory.
+1. The front end requires Apollo Server to be running. Follow the [instructions](https://github.com/widescreenBob/redhackdayapolloserver/tree/main/server) in the README in the `server` directory to get Apollo Server running.
+1. Once you have Apollo Server running at localhost:4000, continue to the next step.
+1. In a new terminal window, `cd` to the `front-end` directory.
 1. Type `npm ci`.
-1. We're currently querying the Github GraphQL API, and they require a Personal Access Token. Create one via that link.
-    * You only need to give it Read permissions
-1. Once you have your Personal Access Token, create `token-config.js` in `front-end/javascripts`.
-1. Using the template below, paste your Personal Access Token where it says `{PERSONAL_ACCESS_TOKEN}`.
-
-```js
-const TOKEN = '{PERSONAL_ACCESS_TOKEN}';
-
-export default TOKEN;
-```
-
-Install instructions subject to change after integrating the Learning Path GraphQL API. 😇
-
+1. Run the server by typing `live-server`.
 
 ## Run the server
 
