@@ -17,7 +17,7 @@ export const typeDefs = gql`
   }
 
   type Query {
-    card: CardPreso
+    card: [CardPreso]
   }
 
   type Query {
@@ -46,7 +46,6 @@ export const typeDefs = gql`
   type HeroContent {
     heroHeading: String!
     heroDescription: String
-    body: String
     metadata: MetaData
     topics: Topics
   }
@@ -67,7 +66,7 @@ export const typeDefs = gql`
     metadata: MetaData
   }
 
-  "Meta data for the hero"
+  "Meta data"
   type MetaData {
     "Type will likely be 'learning path"
     type: String

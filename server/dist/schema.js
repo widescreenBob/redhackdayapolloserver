@@ -22,7 +22,7 @@ exports.typeDefs = (0, graphql_tag_1.default) `
   }
 
   type Query {
-    card: CardPreso
+    card: [CardPreso]
   }
 
   type Query {
@@ -51,7 +51,6 @@ exports.typeDefs = (0, graphql_tag_1.default) `
   type HeroContent {
     heroHeading: String!
     heroDescription: String
-    body: String
     metadata: MetaData
     topics: Topics
   }
@@ -72,7 +71,7 @@ exports.typeDefs = (0, graphql_tag_1.default) `
     metadata: MetaData
   }
 
-  "Meta data for the hero"
+  "Meta data"
   type MetaData {
     "Type will likely be 'learning path"
     type: String

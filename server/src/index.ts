@@ -9,7 +9,7 @@ const mocks = {
     tracksForHome: () => [...new Array(8)],
     hero: () => new Object,
     social: () => new Object,
-    card: () => new Object,
+    card: () => [...new Array(8)],
     topics: () => new Object,
   }),
 
@@ -30,8 +30,8 @@ const mocks = {
   }),
 
   HeroContent: () => ({
-    heroHeading: () => "Get Started with RHEL",
-    heroDescription: () => "Welcome to Red Hat. As a new user or even a longtime user of Red Hat products, it's important to keep your account information, user profile, and community profile up-to-date. Learn how to access your information, and understand the benefits of personalizing your preferences. ",
+    heroHeading: () => "Hello Red Hack Day",
+    heroDescription: () => "This is a demo of a page consuming a GraphQL endpoint consisting of Red Hat learning path content. This page is built with plain HTML, CSS, and JavaScript. It is not in Drupal. It showcases how anyone within our organization could implement this GraphQL API and use it in their project.",
     metadata: () => {
       return {
         type: "Learning Path",
@@ -43,7 +43,7 @@ const mocks = {
     topics: () => {
       return {
         topicId: "Learning",
-        topicName: "dc188-1213213",
+        topicName: "Products",
         topicUrl: "https://bing.com"
       };
     }
