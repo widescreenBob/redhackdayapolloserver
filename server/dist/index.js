@@ -55,7 +55,7 @@ const mocks = {
         featureImageAlt: () => "Get Started with RHEL",
         description: () => "Donec ullamcorper nulla non metus auctor fringilla.",
         title: () => "Learn some things",
-        canonicalUrl: () => "https://bing.com",
+        url: () => "https://bing.com",
         metadata: () => {
             return {
                 type: "Learning Path",

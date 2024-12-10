@@ -63,7 +63,7 @@ export const typeDefs = gql`
     featureImageAlt: String
     description: String
     title: String
-    canonicalUrl: String
+    url: String
     metadata: MetaData
   }
 
