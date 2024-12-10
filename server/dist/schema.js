@@ -67,7 +67,8 @@ exports.typeDefs = (0, graphql_tag_1.default) `
     featureImageUrl: String
     featureImageAlt: String
     description: String
-    body: String
+    title: String
+    canonicalUrl: String
     metadata: MetaData
   }
 
