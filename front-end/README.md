@@ -8,8 +8,7 @@ The purpose of this demo is to showcase that learning path content can be used o
 
 This project requires users have [NodeJS v22.11.0](https://nodejs.org/) installed.
 
-Using Node Version Manager, type ```nvm use```
-Install the version if required.
+If using [Node Version Manager](https://github.com/nvm-sh/nvm), type `nvm use`. Install the version if required.
 
 1. The front end requires Apollo Server to be running. Follow the [instructions](https://github.com/widescreenBob/redhackdayapolloserver/tree/main/server) in the README in the `server` directory to get Apollo Server running.
 1. Once you have Apollo Server running at localhost:4000, continue to the next step.
