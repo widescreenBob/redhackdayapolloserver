@@ -16,6 +16,9 @@ const query = `
   }
 `;
 
+const APP = document.querySelector('#js-app');
+const apiUrl = 'http://localhost:4000/graphql';
+
 const fetchGraphQLData = async (url, query) => {
   try {
     const response = await fetch(url, {
@@ -43,31 +46,34 @@ const fetchGraphQLData = async (url, query) => {
   }
 };
 
-const main = async () => {
-  const apiUrl = 'http://localhost:4000/graphql';
+const render = (items) => {
+  APP.innerHTML = items.map((item) => {
+    const html = `
+      <rh-card class="dx-col-12 sm:dx-col-6 lg:dx-col-4">
+        <h2 slot="header">${item.title}</h2>
+        <p class="dx-m-0">${item.description}</p>
+        <rh-cta slot="footer">
+          <a href="${item.url}">${item.featureImageAlt}</a>
+        </rh-cta>
+      </rh-card>
+    `;
+    return html;
+  }).join('');
+};
+
+const init = async () => {
   try {
     const data = await fetchGraphQLData(apiUrl, query);
+    console.log(data.card);
 
-    const { description, featureImageAlt, featureImageUrl, metadata, title, url } = data.card;
-    const { type, datePublished, numberOfLearningResources, timeToComplete } = metadata;
+    // Render metadata info:
+    document.querySelector('#js-metadata').innerText = `${data.card[0].metadata.type} - ${data.card[0].metadata.numberOfLearningResources} resources - ${data.card[0].metadata.timeToComplete} - ${data.card[0].metadata.datePublished}`;
 
-    document.querySelector('#metadata').innerText = `${type} - ${numberOfLearningResources} resources - ${timeToComplete} - ${datePublished}`;
-
-    // Just a demo, nevermind `innerHTML` here ;-)
-    document.querySelector('#app').innerHTML = `
-      <div class="graphql-content" style="max-width: 800px;"">
-        <rh-card>
-          <h2 slot="header">${title}</h2>
-          <p class="dx-m-0">${description}</p>
-          <rh-cta slot="footer">
-            <a href="${url}">${featureImageAlt}</a>
-          </rh-cta>
-        </rh-card>
-      </div>
-    `;
+    // Render cards:
+    render(data.card);
   } catch (error) {
-    document.getElementById('app').textContent = `Error: ${error.message}`;
+    document.querySelector('#js-app').textContent = `Error: ${error.message}`;
   }
 };
 
-main();
+init();
